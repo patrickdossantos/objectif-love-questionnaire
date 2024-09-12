@@ -1,0 +1,23 @@
+@import "../node_modules/bootstrap";
+
+.bg-red { background-color: red; color: white }
+.text-red { color: red }
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.percentile-result {
+  font-size: 1.8rem;
+}
+
+.questionnaire-advance {
+  font-size: 1rem;
+}

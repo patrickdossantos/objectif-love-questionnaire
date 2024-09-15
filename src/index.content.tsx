@@ -1,11 +1,18 @@
 import type { Questionnaire, ColorSpecificities } from "./types.ts";
 
+import coeurJaune from './v2/assets/coeur-jaune.png'
+import coeurRouge from './v2/assets/coeur-rouge.png'
+import coeurOrange from './v2/assets/coeur-orange.png'
+import coeurViolet from './v2/assets/coeur-violet.png'
+import coeurBleu from './v2/assets/coeur-bleu.png'
+import coeurVert from './v2/assets/coeur-vert.png'
+
 export const colorSpecificities: ColorSpecificities = {
   jaune: {
     title: "Jaune – L'explorateur",
     textColor: "hsl(60,100%,40%)",
     description: {
-      heartUrl: "https://app.evalandgo.com/files/img_user/admin_550602/Capture%20d%E2%80%99e%CC%81cran%202024-06-18%20a%CC%80%2010_33_06(2).png",
+      heartUrl: coeurJaune,
       advises: [
         {
           title: "Créez des moments de stabilité",
@@ -29,7 +36,7 @@ export const colorSpecificities: ColorSpecificities = {
     title: "Rouge – Le Leader",
     textColor: "hsl(0,100%,50%)",
     description: {
-      heartUrl: "https://app.evalandgo.com/files/img_user/admin_550602/Capture%20d%E2%80%99e%CC%81cran%202024-06-18%20a%CC%80%2010_30_54.png",
+      heartUrl: coeurRouge,
       advises: [
         {
           title: "Pratiquez le lâcher-prise",
@@ -53,7 +60,7 @@ export const colorSpecificities: ColorSpecificities = {
     title: "Orange – Le Conciliateur",
     textColor: "hsl(30,100%,50%)",
     description: {
-      heartUrl: "https://app.evalandgo.com/files/img_user/admin_550602/Capture%20d%E2%80%99e%CC%81cran%202024-06-18%20a%CC%80%2010_31_14.png",
+      heartUrl: coeurOrange,
       advises: [
         {
           title: "Exprimez vos besoins",
@@ -77,7 +84,7 @@ export const colorSpecificities: ColorSpecificities = {
     title: "Violet – Le Penseur Rêveur",
     textColor: "hsl(270, 100%, 60%)",
     description: {
-      heartUrl: "https://app.evalandgo.com/files/img_user/admin_550602/Capture%20d%E2%80%99e%CC%81cran%202024-06-18%20a%CC%80%2010_34_17.png",
+      heartUrl: coeurViolet,
       advises: [
         {
           title: "Ancrez vos rêves dans la réalité :",
@@ -101,7 +108,7 @@ export const colorSpecificities: ColorSpecificities = {
     title: "Bleu – Le Perfecteur",
     textColor: "hsl(210,100%,50%)",
     description: {
-      heartUrl: "https://app.evalandgo.com/files/img_user/admin_550602/Capture%20d%E2%80%99e%CC%81cran%202024-06-18%20a%CC%80%2010_33_50.png",
+      heartUrl: coeurBleu,
       advises: [
         {
           title: "Adoptez une approche flexible",
@@ -125,7 +132,7 @@ export const colorSpecificities: ColorSpecificities = {
     title: "Vert – Le Donneur",
     textColor: "hsl(120,100%,40%)",
     description: {
-      heartUrl: "https://app.evalandgo.com/files/img_user/admin_550602/Capture%20d%E2%80%99e%CC%81cran%202024-06-18%20a%CC%80%2010_33_20.png",
+      heartUrl: coeurVert,
       advises: [
         {
           title: "Écoutez vos propres besoins",

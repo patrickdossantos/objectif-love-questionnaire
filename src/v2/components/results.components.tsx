@@ -1,6 +1,12 @@
 import { ColorAttributes, ColorSpecificities, GroupByColor } from '../../types.ts';
 import { COLORS } from '../../constants.ts';
 
+import casserRoutine from '../assets/casser-routine.png'
+import compatibilites from '../assets/compatibilites.png'
+import mieuxSeComprendre from '../assets/mieux-comprendre.png'
+
+import sunrise from '../assets/sunrise.jpg'
+
 type SortResult = { percentile: number, title: string }
 const ColorResultComponent = ({ title, percentile }: SortResult) => (<>
   <div className="progress mb-3 position-relative" style={{height: "50px"}}>
@@ -44,8 +50,7 @@ const ColorDescriptionComponent = ({ attribute }: ColorDescriptionProps) => (<>
 const HeaderComponent = () => (<>
   <h3 className="mb-5 text-center">Bravo !</h3>
   <h2 className="mb-5 text-center">Voici vos r&eacute;sultats</h2>
-  <img className="img-fluid w-100 my-5" alt="Resultats"
-       src="https://app.evalandgo.com/files/img_user/admin_550602/people-gf4565b6bd_1920(1).jpg" />
+  <img className="img-fluid w-100 my-5" alt="Resultats" src={sunrise} />
 </>)
 
 type FooterType = {
@@ -70,9 +75,7 @@ const FooterComponent = ({ colorSpecificities }: FooterType) => (<>
   <div className="row row-cols-1 row-cols-md-3 g-4">
     <div className="col">
       <div className="card h-100">
-        <img
-          src="https://app.evalandgo.com/files/img_user/admin_550602/Capture%20d%E2%80%99e%CC%81cran%202024-09-05%20a%CC%80%2011_26_45.png"
-          className="card-img-top buy-more" alt="..."/>
+        <img src={mieuxSeComprendre} className="card-img-top buy-more" alt="mieux se comprendre" />
         <div className="card-body">
           <p className="card-text">
             Explorez en profondeur votre profil pour mieux comprendre vos comportements et désirs amoureux.
@@ -87,9 +90,7 @@ const FooterComponent = ({ colorSpecificities }: FooterType) => (<>
     </div>
     <div className="col">
       <div className="card h-100">
-        <img
-          src="https://app.evalandgo.com/files/img_user/admin_550602/Capture%20d%E2%80%99e%CC%81cran%202024-09-05%20a%CC%80%2011_26_55(1).png"
-          className="card-img-top buy-more" alt="..."/>
+        <img src={compatibilites} className="card-img-top buy-more" alt="compatibilités amoureuses" />
         <div className="card-body">
           <p className="card-text">
             Découvrez avec qui vous êtes vraiment compatible.
@@ -104,9 +105,7 @@ const FooterComponent = ({ colorSpecificities }: FooterType) => (<>
     </div>
     <div className="col">
       <div className="card h-100">
-        <img
-          src="https://app.evalandgo.com/files/img_user/admin_550602/Capture%20d%E2%80%99e%CC%81cran%202024-09-05%20a%CC%80%2011_27_11.png"
-          className="card-img-top buy-more" alt="..."/>
+        <img src={casserRoutine} className="card-img-top buy-more" alt="..."/>
         <div className="card-body">
           <p className="card-text">
             Offrez-vous ou &agrave; votre partenaire un moment unique gr&acirc;ce &agrave; nos coffrets cadeaux remplis

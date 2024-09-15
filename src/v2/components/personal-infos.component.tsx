@@ -1,7 +1,9 @@
-import { PersonalInfos, Situation } from '../../types.ts';
-import { useRef, useState } from 'react';
-import { SITUATIONS } from '../../constants.ts';
-import { cn } from '../../utils.ts';
+import { PersonalInfos, Situation } from '../../types.ts'
+import { useRef, useState } from 'react'
+import { SITUATIONS } from '../../constants.ts'
+import { cn } from '../../utils.ts'
+
+import couple from '../assets/couple.png'
 
 type Props = {
   setPersonalInfos: (personalInfos: PersonalInfos) => unknown
@@ -13,8 +15,7 @@ const PersonalInfosHeader = () => (<>
     Ce qui suit pourrait bien changer la façon dont vous voyez vos relations. Prêt(e) ?
   </div>
   <div className="text-center mb-5">
-    <img className="img-fluid ratio-16x9 w-50" alt="circle"
-         src="https://app.evalandgo.com/files/img_user/admin_550602/Capture%20d%E2%80%99e%CC%81cran%202024-07-08%20a%CC%80%2015_02_08(1).png"/>
+    <img className="img-fluid ratio-16x9 w-50" alt="circle" src={couple} />
   </div>
 </>)
 

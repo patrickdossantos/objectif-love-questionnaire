@@ -4,7 +4,7 @@ import circle from '../assets/circle.png'
 
 type ColorProps = { attributes: ColorAttributes }
 const ColorTextWrittenInItsColor = ({ attributes }: ColorProps) => {
-  return <span style={{color: attributes.textColor}}>{ attributes.title }</span>
+  return <span className="fw-bold" style={{color: attributes.textColor}}>{ attributes.title }</span>
 }
 
 type Props = {

@@ -22,8 +22,13 @@ type ColorDescriptionProps = { attribute: ColorAttributes }
 const ColorDescriptionComponent = ({ attribute }: ColorDescriptionProps) => (<>
   <div className="mb-5">
     <h2 className="text-center mb-5" style={{color: attribute.textColor}}>{attribute.title}</h2>
-    <div className="fw-bold">Fonctionnement en amour</div>
-    <p style={{textAlign: 'justify'}}>{attribute.description.behaviorInLove}</p>
+    <div className="d-flex align-items-center">
+      <img className="img-fluid heart me-3" src={attribute.description.heartUrl} />
+      <div>
+        <div className="fw-bold">Fonctionnement en amour</div>
+        <p style={{textAlign: 'justify'}}>{attribute.description.behaviorInLove}</p>
+      </div>
+    </div>
     <div className="fw-bold">Forces en relation amoureuse</div>
     <p style={{textAlign: 'justify'}}>{attribute.description.relationshipStrength}</p>
     <div className="fw-bold">Zones de difficult&eacute; et de challenge</div>
@@ -64,13 +69,13 @@ const FooterComponent = ({ colorSpecificities }: FooterType) => (<>
     COLORS.map((color) =>
       (<ColorDescriptionComponent attribute={colorSpecificities[color]} key={color}/>))
   }
-  <div className="fw-bold mb-3">F&eacute;licitations pour avoir d&eacute;couvert votre profil amoureux ! 🎉</div>
+  <div className="fw-bold fs-3 mb-3">F&eacute;licitations pour avoir d&eacute;couvert votre profil amoureux ! 🎉</div>
   <div>
     Vous avez maintenant une meilleure compr&eacute;hension de votre personnalit&eacute; amoureuse. Mais pourquoi
     s'arr&ecirc;ter l&agrave; ?
   </div>
   <br/><br/>
-  <div>💡 Vous souhaitez aller plus loin ?</div>
+  <div className="fs-3 mb-3">💡 Vous souhaitez aller plus loin ?</div>
 
   <div className="row row-cols-1 row-cols-md-3 g-4">
     <div className="col">
@@ -82,10 +87,8 @@ const FooterComponent = ({ colorSpecificities }: FooterType) => (<>
             Apprenez à vous aimer pour être mieux aimé(e).
           </p>
         </div>
-        <div className="card-footer">
-          <a href="https://objectif-love.com/connaissance-de-soi" target="_parent"
-             className="btn-link bg-red d-block text-decoration-none py-1 text-center">Acc&eacute;der</a>
-        </div>
+        <a href="https://objectif-love.com/connaissance-de-soi" target="_parent"
+           className="btn-link bg-red d-block text-decoration-none py-1 text-center">Acc&eacute;der</a>
       </div>
     </div>
     <div className="col">
@@ -97,10 +100,8 @@ const FooterComponent = ({ colorSpecificities }: FooterType) => (<>
             Identifiez les forces et défis dans vos relations pour bâtir une histoire d'amour solide et épanouissante.
           </p>
         </div>
-        <div className="card-footer">
-          <a href="https://objectif-love.com/compatibilites-amoureuses" target="_parent"
-             className="btn-link bg-red d-block text-decoration-none py-1 text-center">Acc&eacute;der</a>
-        </div>
+        <a href="https://objectif-love.com/compatibilites-amoureuses" target="_parent"
+           className="btn-link bg-red d-block text-decoration-none py-1 text-center">Acc&eacute;der</a>
       </div>
     </div>
     <div className="col">
@@ -113,10 +114,8 @@ const FooterComponent = ({ colorSpecificities }: FooterType) => (<>
             surprises pour renforcer votre complicit&eacute; et pimenter votre relation.
           </p>
         </div>
-        <div className="card-footer">
-          <a href="https://objectif-love.com/coffrets-cadeaux" target="_parent"
-             className="btn-link bg-red d-block text-decoration-none py-1 text-center">Acc&eacute;der</a>
-        </div>
+        <a href="https://objectif-love.com/coffrets-cadeaux" target="_parent"
+           className="btn-link bg-red d-block text-decoration-none py-1 text-center">Acc&eacute;der</a>
       </div>
     </div>
   </div>

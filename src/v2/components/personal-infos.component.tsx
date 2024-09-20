@@ -16,6 +16,9 @@ const PersonalInfosHeader = () => (<>
   <div className="text-center mb-5">
     <img className="img-fluid ratio-16x9 w-50" alt="circle" src={couple} />
   </div>
+  <div className="my-5 fw-bold">
+    Avant de commencer, je rentre mes coordonn&eacute;es <span className="text-red">*</span>:
+  </div>
 </>)
 
 export default function PersonalInfosComponent({ setPersonalInfos }: Props) {

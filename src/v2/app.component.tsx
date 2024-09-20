@@ -8,11 +8,12 @@ import LandingPageComponent from './components/landing-page.component.tsx'
 import PersonalInfosComponent from './components/personal-infos.component.tsx'
 
 import createSelectionAction from './store/actions/select-color.action.ts'
-import createPreviousAction from './store/actions/previous.action.ts'
 import createNextAction from './store/actions/next.action.ts'
 import createGotoFormAction from './store/actions/goto-form.action.ts'
 import createSetFormAction from './store/actions/set-form.action.ts'
 import createGotoResultsAction from './store/actions/goto-results.action.ts'
+
+import { saveContact } from './app.service.ts'
 
 const ComponentToDisplay = () => {
   const [state, dispatch] = useReducer(reducer, initialState)
@@ -21,7 +22,10 @@ const ComponentToDisplay = () => {
     case 'infos':
       return (<>
         <HeaderComponent/>
-        <PersonalInfosComponent setPersonalInfos={(infos) => dispatch(createSetFormAction(infos))} previousValue={state.personalData} />
+        <PersonalInfosComponent setPersonalInfos={async (infos) => {
+          dispatch(createSetFormAction(infos))
+          await saveContact(infos);
+        }} />
       </>)
     case 'landing':
       return (<>
@@ -39,11 +43,9 @@ const ComponentToDisplay = () => {
     case 'questionnaire': {
       const currentIndex = state.currentQuestionIndex
       const currentQuestion = state.allQuestions[currentIndex]
-      const currentAnswer = state.answers[currentIndex]
       const percentile = state.currentQuestionIndex * 100 / state.allQuestions.length
       const height = "30px"
 
-      const previous = currentIndex === 0 ? createGotoFormAction() : createPreviousAction()
       const next = currentIndex === state.allQuestions.length - 1 ? createGotoResultsAction() : createNextAction()
 
       return <>
@@ -59,16 +61,15 @@ const ComponentToDisplay = () => {
         </HeaderComponent>
         <QuestionComponent
           question={currentQuestion}
-          selectedColor={currentAnswer}
-          selectColor={(color) => dispatch(createSelectionAction(color))}
-          onPrevious={() => dispatch(previous)}
-          onNext={() => dispatch(next)}
+          selectColor={(color) => {
+            dispatch(createSelectionAction(color))
+            dispatch(next)
+          }}
           key={currentIndex}
         />
       </>
     }
   }
-
 }
 
 const AppComponent = () => {

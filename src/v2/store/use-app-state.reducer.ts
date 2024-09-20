@@ -4,13 +4,12 @@ import type { AppState } from './app.state.ts'
 import { questionnaire, colorSpecificities } from '../../index.content.tsx'
 
 import { SelectColorAction, reduceColorSelection, ColorSelectionType } from './actions/select-color.action.ts'
-import { PreviousPageAction, reducePreviousPage, PreviousPageType } from './actions/previous.action.ts'
 import { NextPageAction, reduceNextPage, NextPageType } from './actions/next.action.ts'
 import { GotoFormAction, reduceGotoForm, GotoFormType } from './actions/goto-form.action.ts'
 import { SetFormAction, reduceSetForm, SetFormType } from './actions/set-form.action.ts'
 import { GotoResultsAction, reduceGotoResults, GotoResultsType } from './actions/goto-results.action.ts'
 
-export type Actions = SelectColorAction | PreviousPageAction | NextPageAction | GotoFormAction | SetFormAction | GotoResultsAction
+export type Actions = SelectColorAction | NextPageAction | GotoFormAction | SetFormAction | GotoResultsAction
 
 export const initialState: AppState = {
   step: 'landing',
@@ -39,8 +38,6 @@ export const reducer: Reducer<AppState, Actions> = (appState: AppState, action: 
   switch (type) {
     case ColorSelectionType:
       return reduceColorSelection(appState, action)
-    case PreviousPageType:
-      return reducePreviousPage(appState)
     case NextPageType:
       return reduceNextPage(appState)
     case GotoFormType:

@@ -7,7 +7,6 @@ import couple from '../assets/couple.png'
 
 type Props = {
   setPersonalInfos: (personalInfos: PersonalInfos) => unknown
-  previousValue: PersonalInfos | undefined
 }
 
 const PersonalInfosHeader = () => (<>
@@ -19,23 +18,21 @@ const PersonalInfosHeader = () => (<>
   </div>
 </>)
 
-export default function PersonalInfosComponent({setPersonalInfos, previousValue}: Props) {
+export default function PersonalInfosComponent({ setPersonalInfos }: Props) {
   const nameRef = useRef<HTMLInputElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const acceptRef = useRef<HTMLInputElement>(null);
-  const [status, setStatus] = useState<Situation | undefined>(previousValue?.situation)
+  const [status, setStatus] = useState<Situation | undefined>(undefined)
   const [errors, setErrors] = useState<string[]>([])
 
   const validate = () => {
     const isNameInvalid = !nameRef.current?.value.length
     const isEmailInvalid = (emailRef.current?.value ?? '').match(/[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/) === null
-    const isStatusInvalid = typeof status === 'undefined'
     const isNotAccepted = !acceptRef.current?.checked
 
     const errors: string[] = [
       isNameInvalid ? 'Le nom doit être rempli': '',
       isEmailInvalid ? "L'email n'est pas valide": '',
-      isStatusInvalid ? 'Veuillez renseigner votre situation amoureuse': '',
       isNotAccepted ? 'Veuillez accepter le traitement de vos données personnelles': ''
     ].filter((item) => item.length > 0);
 
@@ -49,15 +46,15 @@ export default function PersonalInfosComponent({setPersonalInfos, previousValue}
       errors.map((error) => (<div className="bg-red text-white mb-3 px-3 rounded" key={error}>{error}</div>))
     }
     <div className="input-group mb-3">
-      <span className="input-group-text">Email</span>
-      <input type="text" className="form-control" placeholder="Email" ref={emailRef} defaultValue={previousValue?.email} />
+      <span className="input-group-text">Nom</span>
+      <input type="text" className="form-control" placeholder="Prénom" ref={nameRef} defaultValue=""/>
     </div>
     <div className="input-group mb-3">
-      <span className="input-group-text">Nom</span>
-      <input type="text" className="form-control" placeholder="Prénom" ref={nameRef} defaultValue={previousValue?.name} />
+      <span className="input-group-text">Email</span>
+      <input type="text" className="form-control" placeholder="Email" ref={emailRef} defaultValue=""/>
     </div>
     <div className="form-check my-5">
-      <input className="form-check-input" type="checkbox" value="" id="acceptDataUsage" ref={acceptRef} />
+      <input className="form-check-input" type="checkbox" value="" id="acceptDataUsage" ref={acceptRef}/>
       <label className="form-check-label me-2" htmlFor="acceptDataUsage">
         J'accepte le traitement de mes données personnelles par Objectif Love.
       </label>

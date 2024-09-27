@@ -15,7 +15,7 @@ export default function QuestionComponent({ question, selectColor }: Props) {
       <ul className="list-group mb-5">
         {
           Object.entries(question.answers)
-            .map(([color, label]) => <li key={color} className="list-group-item" onClick={() => selectColor(color as Color)}>{label}</li>)
+            .map(([color, label]) => <li key={color} className="list-group-item hover" onClick={() => selectColor(color as Color)}>{label}</li>)
         }
       </ul>
       <div className="text-center">

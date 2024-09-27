@@ -1,6 +1,6 @@
 @import "../node_modules/bootstrap";
 
-.bg-red { background-color: red; color: white }
+.bg-red, .hover:hover { background-color: red; color: white }
 .text-red { color: red }
 
 img.buy-more {

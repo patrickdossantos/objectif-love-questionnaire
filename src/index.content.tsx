@@ -7,6 +7,13 @@ import coeurViolet from './v2/assets/coeur-violet.png'
 import coeurBleu from './v2/assets/coeur-bleu.png'
 import coeurVert from './v2/assets/coeur-vert.png'
 
+import coeurMains from './v2/assets/coeur-mains.png'
+import milkshake from './v2/assets/partage-milkshake.png'
+import coeurdenas from './v2/assets/coeurs-suspendus.png'
+import photos from './v2/assets/photos.png'
+import foret from './v2/assets/foret.png'
+import cuisine from './v2/assets/cuisine.png'
+
 export const colorSpecificities: ColorSpecificities = {
   jaune: {
     title: "Jaune – L'explorateur",
@@ -166,6 +173,7 @@ export const questionnaire: Questionnaire = [
       bleu: "Je me sens enthousiaste et anxieux.",
       vert: "Je me sens attentionné et aimant.",
     },
+    afterImage: <img alt="question" src={coeurMains} className="img-fluid" style={{ width: "50%" }} />,
   },
   {
     motivation: <></>,
@@ -178,10 +186,11 @@ export const questionnaire: Questionnaire = [
       orange: "L'harmonie et la paix.",
       rouge: "Le respect et l'accomplissement de chacun.",
     },
+    afterImage: <img alt="question" src={coeurMains} className="img-fluid" style={{width: "50%"}}/>,
   },
   {
     motivation: <div style={{textAlign: "justify", fontSize: "1rem"}} className="mb-5">
-      <h2 className="fw-bold">
+    <h2 className="fw-bold">
         <span>💡</span>
         <span className="text-red">Saviez-vous que les relations &agrave; long terme augmentent votre esp&eacute;rance de vie ?</span>
       </h2>
@@ -196,6 +205,7 @@ export const questionnaire: Questionnaire = [
       jaune: "Je préfère minimiser la situation et me focaliser sur le positif.",
       orange: "Je fais tout pour les éviter.",
     },
+    afterImage: <img alt="question" src={milkshake} className="img-fluid" style={{width: "50%"}}/>,
   },
   {
     motivation: <></>,
@@ -208,10 +218,11 @@ export const questionnaire: Questionnaire = [
       rouge: "Le manque d'ambition et de détermination.",
       violet: "Le manque de profondeur et de connexion.",
     },
+    afterImage: <img alt="question" src={milkshake} className="img-fluid" style={{width: "50%"}}/>,
   },
   {
     motivation: <></>,
-    label: "5- Quel est, selon vous, vos meilleures qualités en couple ?",
+    label: "5- Quelles sont, selon vous, vos meilleures qualités en couple ?",
     answers: {
       vert: "Mon amour débordant et mon côté attentionné.",
       orange: "Ma patience et mon calme.",
@@ -220,6 +231,7 @@ export const questionnaire: Questionnaire = [
       violet: "Ma richesse émotionnelle et intellectuelle.",
       bleu: "Ma loyauté et mon sens de la responsabilité.",
     },
+    afterImage: <></>,
   },
   {
     motivation: <></>,
@@ -232,6 +244,7 @@ export const questionnaire: Questionnaire = [
       rouge: "Je n'hésite pas à sortir les grands moyens et à soutenir ma moitié.",
       violet: "Je partage mes pensées et mes émotions les plus profond(e)s.",
     },
+    afterImage: <></>,
   },
   {
     motivation: <></>,
@@ -244,6 +257,7 @@ export const questionnaire: Questionnaire = [
       vert: "Être ignoré ou pris pour acquis.",
       jaune: "Être privé de liberté et m'ennuyer.",
     },
+    afterImage: <img alt="question" src={coeurdenas} className="img-fluid" style={{width: "50%"}}/>,
   },
   {
     motivation: <></>,
@@ -256,6 +270,7 @@ export const questionnaire: Questionnaire = [
       orange: "Je m'efforce de rester stable, avec patience et compréhension.",
       rouge: "Je cherche à attirer l'attention sur moi et j'aborde le sujet.",
     },
+    afterImage: <img alt="question" src={coeurdenas} className="img-fluid" style={{width: "50%"}}/>,
   },
   {
     motivation: <></>,
@@ -268,6 +283,7 @@ export const questionnaire: Questionnaire = [
       jaune: "Je suis enthousiaste à l'idée de faire de nouvelles expériences.",
       orange: "Je cherche à m'adapter en douceur et avec harmonie.",
     },
+    afterImage: <img alt="question" src={photos} className="img-fluid" style={{width: "50%"}}/>,
   },
   {
     motivation: <></>,
@@ -280,6 +296,7 @@ export const questionnaire: Questionnaire = [
       rouge: "En se fixant des objectifs communs avec un rythme dynamique.",
       violet: "Le manque de profondeur et de connexion.",
     },
+    afterImage: <img alt="question" src={photos} className="img-fluid" style={{width: "50%"}}/>,
   },
   {
     motivation: <div style={{textAlign: "justify", fontSize: "1rem"}} className="mb-5 fs-3 fw-bold">
@@ -295,6 +312,7 @@ export const questionnaire: Questionnaire = [
       violet: "Sa confiance en elle/lui.",
       bleu: "Sa fiabilité.",
     },
+    afterImage: <></>,
   },
   {
     motivation: <></>,
@@ -307,6 +325,7 @@ export const questionnaire: Questionnaire = [
       orange: "Je suis présent, calme et à l'écoute.",
       rouge: "Je soutiens mon partenaire en l'encourageant de façon solide.",
     },
+    afterImage: <></>,
   },
   {
     motivation: <></>,
@@ -319,6 +338,7 @@ export const questionnaire: Questionnaire = [
       bleu: "Je tente de rationaliser les fondements de mon ressenti. J'ouvre un dialogue franc.",
       vert: "Je mets en avant mes plus belles qualités et je redouble d'attention.",
     },
+    afterImage: <img alt="question" src={foret} className="img-fluid" style={{width: "50%"}}/>,
   },
   {
     motivation: <></>,
@@ -331,6 +351,7 @@ export const questionnaire: Questionnaire = [
       bleu: "La confiance et la sécurité.",
       vert: "Me sentir apprécié pour ce que je fais.",
     },
+    afterImage: <img alt="question" src={foret} className="img-fluid" style={{width: "50%"}}/>,
   },
   {
     motivation: <></>,
@@ -343,6 +364,7 @@ export const questionnaire: Questionnaire = [
       orange: "Je tente de rester calme et de trouver des compromis.",
       rouge: "Je réagis vite et bien.",
     },
+    afterImage: <img alt="question" src={cuisine} className="img-fluid" style={{width: "50%"}}/>,
   },
   {
     motivation: <></>,
@@ -355,6 +377,7 @@ export const questionnaire: Questionnaire = [
       jaune: "Ma peur de l'engagement et de l'ennui.",
       orange: "Ma tendance à être trop passif(ve).",
     },
+    afterImage: <img alt="question" src={cuisine} className="img-fluid" style={{width: "50%"}}/>,
   },
   {
     motivation: <>
@@ -376,6 +399,7 @@ export const questionnaire: Questionnaire = [
       rouge: "Franc et assertif.",
       violet: "Raisonnable et profond.",
     },
+    afterImage: <></>,
   },
   {
     motivation: <></>,
@@ -388,6 +412,7 @@ export const questionnaire: Questionnaire = [
       orange: "Des prises d'initiatives de mon partenaire.",
       rouge: "Mon propre plaisir avant tout.",
     },
+    afterImage: <></>,
   },
   {
     motivation: <>
@@ -410,6 +435,7 @@ export const questionnaire: Questionnaire = [
       orange: "Je m'efforce de maintenir l'harmonie entre la famille et la relation amoureuse. Je veille à ce que chacun s'entende bien.",
       jaune: "J'aime que nous passions de bons moments ensemble. Sans contraintes et avec légèreté.",
     },
+    afterImage: <img alt="question" src={coeurMains} className="img-fluid" style={{width: "50%"}}/>,
   },
   {
     motivation: <></>,
@@ -422,5 +448,6 @@ export const questionnaire: Questionnaire = [
       rouge: "Je suis motivé par les projets futurs ; ils dynamisent notre couple.",
       violet: "Je suis ouvert aux projets futurs, mais je privilégie une approche flexible.",
     },
+    afterImage: <img alt="question" src={coeurMains} className="img-fluid" style={{width: "50%"}}/>,
   },
 ]

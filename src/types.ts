@@ -10,6 +10,7 @@ export type Question = {
   label: string
   answers: GroupByColor<string>
   motivation: ReactNode
+  afterImage: ReactNode
 }
 export type Questionnaire = Question[]
 
